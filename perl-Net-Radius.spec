@@ -1,6 +1,6 @@
 %define module  Net-Radius
 %define name    perl-%{module}
-%define version 1.49
+%define version 1.55
 %define release %mkrel 1
 
 Name:           %{name}
@@ -14,6 +14,7 @@ Source:         http://www.cpan.org/modules/by-module/Net/%{module}-%{version}.t
 %if %{mdkversion} < 1010
 Buildrequires:  perl-devel
 %endif
+Buildrequires:  perl(Test::Warn)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
