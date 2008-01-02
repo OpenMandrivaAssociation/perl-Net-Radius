@@ -16,6 +16,7 @@ Buildrequires:  perl-devel
 %endif
 Buildrequires:  perl(Test::Warn)
 BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 The modules included here provide an interface to the RADIUS
