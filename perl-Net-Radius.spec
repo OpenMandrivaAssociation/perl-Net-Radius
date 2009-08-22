@@ -1,19 +1,14 @@
-%define module  Net-Radius
-%define name    perl-%{module}
-%define version 1.56
-%define release %mkrel 4
+%define upstream_name       Net-Radius
+%define upstream_version    1.56
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 Summary:        Object-oriented Perl interface to RADIUS
 License:        GPL or Artistic
 Group:          Development/Perl
 URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Net/%{module}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-Buildrequires:  perl-devel
-%endif
+Source:     http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
 Buildrequires:  perl(Test::Warn)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}
@@ -26,7 +21,7 @@ Net::Radius::Packet - Deals with RADIUS packets
 Net::Radius::Dictionary - Deals with RADIUS dictionaries
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
