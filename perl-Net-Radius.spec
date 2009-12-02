@@ -1,5 +1,5 @@
 %define upstream_name       Net-Radius
-%define upstream_version    1.56
+%define upstream_version 2.103
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
